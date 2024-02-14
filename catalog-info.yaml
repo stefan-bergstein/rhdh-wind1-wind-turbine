@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: rhdh-wind1-wind-turbine-app-dev
+  annotations:
+    argocd/app-name: rhdh-wind1-wind-turbine-app-dev
+    backstage.io/kubernetes-id: rhdh-wind1-wind-turbine-app
+    backstage.io/kubernetes-namespace: rhdh-wind1
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: stefan-bergstein/rhdh-wind1-wind-turbine
+    janus-idp.io/tekton-enabled: 'true'
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://console-openshift-console.apps.ocp5.stormshift.coe.muc.redhat.com/dev-pipelines/ns/rhdh-wind1/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.ocp5.stormshift.coe.muc.redhat.com/k8s/ns/rhdh-wind1/deployments/rhdh-wind1-wind-turbine-app
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.ocp5.stormshift.coe.muc.redhat.com/#https://github.com/stefan-bergstein/rhdh-wind1-wind-turbine?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "janus-authors"
